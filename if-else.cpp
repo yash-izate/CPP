@@ -21,4 +21,6 @@ int main()
   {
     cout << "You cannot vote.";
   }
+
+  return 0;
 }
