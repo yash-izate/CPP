@@ -9,7 +9,11 @@ int main()
   cout << "Enter your age: ";
   cin >> age;
 
-  if (age >= 18)
+  if (age <= 0 && age >= 100)
+  {
+    cout << "Invalid age.";
+  }
+  else if (age >= 18)
   {
     cout << "You can vote.";
   }
