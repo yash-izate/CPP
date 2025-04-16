@@ -1,5 +1,3 @@
-// One derived class inherits from one base class.
-
 #include<iostream>
 using namespace std;
 
@@ -10,11 +8,17 @@ public:
     }
 };
 
-class Derived : public Base {
+class Derived1 : public Base {
+};
+
+class Derived2 : public Base {
 };
 
 int main() {
-    Derived obj;
-    obj.show();
+    Derived1 obj1;
+    Derived2 obj2;
+
+    obj1.show();
+    obj2.show();
     return 0;
 }
