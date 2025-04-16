@@ -11,6 +11,10 @@ public:
 };
 
 class Derived : public Base {
+    public:
+        void show() {
+            cout << "This is the Derived class" << endl;
+        }
 };
 
 int main() {
