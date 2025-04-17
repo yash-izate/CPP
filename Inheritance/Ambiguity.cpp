@@ -1,3 +1,5 @@
+// Ambiguity error problem 
+
 #include <iostream>
 using namespace std;
 
