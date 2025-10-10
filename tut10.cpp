@@ -1,5 +1,5 @@
 //  Static members of class - Count is the static data member of class Employee
-// Static functions has access of others static members and functions only
+// Static functions has access of others static members and functions only.
 
 #include <iostream>
 using namespace std;
