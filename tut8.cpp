@@ -38,7 +38,7 @@ void Binary ::chk_bin(void)
 
 void Binary ::ones_compliment(void)
 {
-    chk_bin();
+    // chk_bin();
     
     for (int i = 0; i < s.length(); i++)
     {
