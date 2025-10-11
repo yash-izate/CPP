@@ -1,6 +1,7 @@
-/* Friend Function in cpp
-  friend function helps the function to access private data of the class
-  it act as a permission of the class to access its private data
+/* Friend Function in cpp - A friend function is a non-member function that is granted access to the private and protected members of a class.
+
+// Friend function helps the function to access private data of the class
+// It act as a permission of the class to access its private data
  -----------------------------------------------------------------------------
  # Properties of the friend function:
 
