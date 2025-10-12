@@ -1,4 +1,15 @@
-// Copy Constructor
+/* Copy Constructor -
+
+A copy constructor in C++ is a special constructor that is used to create a new object as a copy of an existing object.
+
+It defines how an object should be copied when:
+
+You initialize one object from another of the same class.
+
+You pass an object by value to a function.
+
+You return an object by value from a function.
+*/
 
 #include <iostream>
 using namespace std;
