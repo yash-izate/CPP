@@ -55,15 +55,21 @@ using namespace std;
    It unlocks all standard C++ features without typing std:: everytime.
 */
 
+// global variable
+int num = 100;
+
 // Entry point of the program
 int main()
 
 {
 
-    int num;
+  int num;
 
-    cin >> num;
-    cout << ++num;
+  cin >> num;
+  cout << ++num;
 
-    return 0;
+  // to call global variable we use (::) scope resolution operator
+  cout << " --> " << ::num << endl;
+
+  return 0;
 }
