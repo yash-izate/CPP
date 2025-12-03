@@ -43,9 +43,21 @@ Data Types -   Data types define the type of data a variable can hold.
 */
 
 #include <iostream>
+
+/*This is a header file; there are two types of header files -
+  1. System Header Files - It comes with the compiler.
+  2. User Defined Header Files - It is written by the programmer.
+  */
+
 using namespace std;
 
+/* It tells the  C++ Compiler :  "Use the standard library by default"
+   It unlocks all standard C++ features without typing std:: everytime.
+*/
+
+// Entry point of the program
 int main()
+
 {
 
     int num;
