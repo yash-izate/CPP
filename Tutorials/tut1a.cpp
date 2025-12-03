@@ -63,6 +63,9 @@ int main()
 
 {
 
+// const cannot be modified
+  const float PI = 3.14;
+
   int num;
 
   cin >> num;
