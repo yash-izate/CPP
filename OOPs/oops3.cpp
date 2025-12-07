@@ -24,7 +24,10 @@ public:
         imag = y;
     }
 
-    void display();
+    void display()
+    {
+        cout << real << " + " << imag << "i." << endl;
+    }
 
     Complex operator+(Complex obj);
 };
@@ -35,11 +38,6 @@ Complex Complex::operator+(Complex obj)
     temp.real = real + obj.real;
     temp.imag = imag + obj.imag;
     return temp;
-}
-
-void Complex ::display()
-{
-    cout << real << " + " << imag << "i." << endl;
 }
 
 int main()
