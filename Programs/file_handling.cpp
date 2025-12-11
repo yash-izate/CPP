@@ -28,9 +28,12 @@ int main()
     ifstream inf("sample.txt");
     inf >> name;
     inf >> cost;
+    inf.close();
 
     cout << "\nName of item: " << name << endl;
-    cout << "\nCost of item:" << cost << endl;
+    cout << "Cost of item:" << cost << endl;
+
+    
 
     return 0;
 }
