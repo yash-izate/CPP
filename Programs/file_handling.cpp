@@ -33,7 +33,5 @@ int main()
     cout << "\nName of item: " << name << endl;
     cout << "Cost of item:" << cost << endl;
 
-    
-
     return 0;
 }
