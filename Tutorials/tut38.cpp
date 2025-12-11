@@ -1,15 +1,22 @@
-/* Program for Virtual function:
+/* Runtime Polymorphism using Virtual Functions
 
-Rules - 1. They cannot be static
-        2. They are accessed by object pointer
-        3. Virtual function can be a friend of another class
-        4. A virtual function in base class might not be used
-        5. If a virtual function is defined in a base class ,
-            there is no necessity of redefining it in the derived class
- */
+   ✔ Polymorphism = One name, many forms
+   ✔ Runtime polymorphism happens when:
+       - A base class pointer
+       - Points to a derived class object
+       - And calls a VIRTUAL function
+
+   ✔ virtual keyword tells the compiler:
+       "Select the function during RUN TIME, not COMPILE time".
+
+   ✔ Without virtual:
+       Base class pointer always calls BASE class function.
+
+   ✔ With virtual:
+       Base class pointer calls DERIVED class function.
+*/
 
 #include <iostream>
-#include <cstring>
 using namespace std;
 
 class CWH
@@ -25,27 +32,32 @@ public:
         rating = r;
     }
 
+    // VIRTUAL FUNCTION
+    // ✔ Not pure virtual
+    // ✔ Provides a default definition
+    // ✔ Allows runtime polymorphism when accessed via base pointer
     virtual void display()
     {
-        // A virtual function in base class might not be used
-        cout << "Bogus code - runs if display not found in derived class" << endl;
+        cout << "Base class display function (default)" << endl;
     }
 };
 
 class CWHVideo : public CWH
 {
-    int videoLength;
+    float videoLength;
 
 public:
     CWHVideo(string s, float r, float vl) : CWH(s, r)
     {
         videoLength = vl;
     }
+
+    // Overrides virtual function
     void display()
     {
         cout << "This is an amazing video with title: " << title << endl;
         cout << "Ratings (out of 5): " << rating << endl;
-        cout << "Length of the video is: " << videoLength << " minutes" << endl;
+        cout << "Length of the video is: " << videoLength << " minutes\n\n";
     }
 };
 
@@ -58,11 +70,13 @@ public:
     {
         words = wc;
     }
+
+    // Overrides virtual function
     void display()
     {
         cout << "This is an amazing text tutorial with title: " << title << endl;
         cout << "Ratings (out of 5): " << rating << endl;
-        cout << "No. of words in this text tutorial is: " << words << " words" << endl;
+        cout << "No. of words: " << words << " words\n\n";
     }
 };
 
@@ -72,29 +86,34 @@ int main()
     float rating, vlen;
     int words;
 
-    // for code with harry video
+    // Create video object
     title = "Django-Tutorial-Video";
     vlen = 10.57;
     rating = 4.7;
-
     CWHVideo djVideo(title, rating, vlen);
-    djVideo.display();
 
-    // for code with harry text
+    // Create text object
     title = "Django-Tutorial-Text";
     words = 433;
     rating = 4.19;
-
     CWHText djText(title, rating, words);
+
+    // Normal direct calls
+    djVideo.display();
     djText.display();
 
-    // now pointer points to derived class
+    /* Runtime Polymorphism using virtual function
+       ✔ Base class pointer points to derived objects
+       ✔ virtual ensures correct derived display() is called
+       ✔ Function call decided at RUN TIME
+    */
     CWH *tuts[2];
-    tuts[0] = &djVideo;
-    tuts[1] = &djText;
+    tuts[0] = &djVideo;  // base ptr → video object
+    tuts[1] = &djText;   // base ptr → text object
 
-    tuts[0]->display();
-    tuts[1]->display();
+    // Runtime polymorphism (dynamic dispatch)
+    tuts[0]->display();  // calls CWHVideo::display
+    tuts[1]->display();  // calls CWHText::display
 
     return 0;
 }
