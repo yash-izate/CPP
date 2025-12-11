@@ -1,4 +1,11 @@
-/* Program for polymorphism example
+/* Program for Virtual function:
+
+Rules - 1. They cannot be static
+        2. They are accessed by object pointer
+        3. Virtual function can be a friend of another class
+        4. A virtual function in base class might not be used
+        5. If a virtual function is defined in a base class ,
+            there is no necessity of redefining it in the derived class
  */
 
 #include <iostream>
@@ -18,7 +25,11 @@ public:
         rating = r;
     }
 
-    virtual void display() {}
+    virtual void display()
+    {
+        // A virtual function in base class might not be used
+        cout << "Bogus code - runs if display not found in derived class" << endl;
+    }
 };
 
 class CWHVideo : public CWH
